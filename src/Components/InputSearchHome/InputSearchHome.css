@@ -1,0 +1,103 @@
+
+.search-container-home {
+    position: relative;
+  
+    width: 70vh;
+  }
+  
+  .modalSearch {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    width: 100%;
+    background-color: var( --gris);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    z-index: 9;
+    max-height: 30vh;
+    overflow-y:scroll;
+    border-radius: 7px ;
+    transition: all .40s ease;
+    margin-top: 10px;
+}
+ 
+  .modalSearch p {
+    display: block;
+  
+    text-decoration: none;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0px;
+    color: var(--text-color2)!important;
+  }
+  
+  .inputSearchhHome{
+    background-color: var(  --gris)!important;
+   
+    border-radius: 20px;
+    border: 0.3px solid #00000037;
+    padding: 5px 10px;
+    width: 100%;
+    color: var(--text-color2);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+  }
+  .input{
+    width: 90%;
+    height: 100%;
+    padding: 6px 6px;
+    background-color: transparent;
+    border: none;
+  }
+  .modalSearch a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    padding: 10px 10px;
+    color: var(--color1);
+  }
+  .modalSearch a:hover p{
+
+    color: var(--blanco)!important;
+ }
+  .modalSearch a:hover {
+   background-color: var(--color1);
+   border-radius: 7px;
+   transition: 0.5s ease all;
+   color: var(--blanco)!important;
+  
+}
+  
+
+ 
+  .modalSearch::-webkit-scrollbar{
+    width: 7px;
+    height: 7px;
+    cursor: pointer;
+ }
+ 
+ .modalSearch::-webkit-scrollbar-thumb{
+     background-color: var(--color1);
+     width: 10px;
+     border-radius:20px ;
+     cursor: pointer;
+ }
+.search-icon-home{
+    background-color: var(--color1);
+    color: var(--blanco);
+    padding: 10px;
+    border-radius: 100%;
+  
+}
+
+
+ @media (max-width: 800px){
+  .search-container-home {
+    width: 100%;
+  }
+ }

@@ -1,0 +1,32 @@
+.comentariosContain{
+    padding: 10px 0%;
+}
+
+.formComentario {
+    display: flex;
+    flex-direction: column;
+   
+    gap: 1rem;
+}
+.formComentario textarea{
+    height: 10vh;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+}
+.formComentario button{
+    background-color: var(--color1);
+    border: none;
+    color: var(--blanco);
+    padding: 14px 20px;
+    border-radius: 10px;
+   
+    cursor: pointer;
+    width: 150px;
+    font-size: 16px;
+    font-weight: bold;
+   
+}

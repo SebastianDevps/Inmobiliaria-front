@@ -1,0 +1,70 @@
+.scrollToTopButton {
+    position: fixed;
+    bottom: 20px; /* Cambiar '20px' para ajustar la posición vertical del botón */
+    right: 20px; /* Cambiar '20px' para ajustar la posición horizontal del botón */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: var(--color1);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0; /* Establecer la opacidad inicial en 0 */
+    visibility: hidden; /* Ocultar el botón inicialmente */
+    animation: fadeIn 0.3s ease-in-out forwards; /* Animación de aparición con duración de 0.3 segundos */
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  .scrollToTopButton:hover::before {
+    width: 100%; /* Establecer el ancho del recargado en 100% al pasar el cursor sobre el botón */
+    opacity: 1;
+  }
+  
+  .scrollToTopButton::after {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-140deg);
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    padding: 5px;
+    transition: border-color 0.3s ease-in-out;
+    -webkit-transition: border-color 0.3s ease-in-out;
+    -moz-transition: border-color 0.3s ease-in-out;
+    -ms-transition: border-color 0.3s ease-in-out;
+    -o-transition: border-color 0.3s ease-in-out;
+}
+  
+ 
+  
+  .hideButton {
+    animation: fadeOut 0.3s ease-in-out forwards; /* Animación de desaparición con duración de 0.3 segundos */
+  }
+  
+  

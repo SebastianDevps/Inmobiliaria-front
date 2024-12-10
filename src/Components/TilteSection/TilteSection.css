@@ -1,0 +1,28 @@
+.titleSection{
+    padding: 10px 3%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+.titleSection a{
+    color: var(--color1);
+}
+.titleSection h2{
+    color: var(--text-color);
+}
+
+@media (max-width: 1020px) {
+    .titleSection{
+    
+     padding: 10px 5%;
+    }
+    .titleSection h2{
+       
+        font-size: 20px;
+       
+    }
+    .titleSection a{
+       display: none;
+    }
+}

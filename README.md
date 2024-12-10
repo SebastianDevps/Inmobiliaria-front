@@ -23,26 +23,21 @@ Una aplicación web moderna para una inmobiliaria desarrollada con React, que pe
 ## 📦 Instalación
 
 1. Clona el repositorio:
-bash
-git clone https://github.com/tu-usuario/inmobiliaria-react.git
+   bash `git clone https://github.com/SebastianDevps/Inmobiliaria-front.git`
 
 2. Instala las dependencias:
-bash
-cd inmobiliaria-react
-npm install
+   bash `cd inmobiliaria-react`
+   bash `npm install`
 
 3. Configura las variables de entorno:
-bash
-cp .env.example .env
+   bash `cp .env.example .env`
 
 Edita el archivo `.env` con tus credenciales
 
 4. Inicia el servidor de desarrollo:
-bash
-npm start
+   bash `npm start`
 
 5. Accede a la aplicación en http://localhost:3000
-
 
 ## 🛠️ Scripts Disponibles
 
@@ -54,12 +49,9 @@ npm start
 
 ## 📱 Capturas de Pantalla
 
-
-
 ## 🌐 Demo en Vivo
 
 Visita la demo: [muy pronto](https://.com)
-
 
 ## 🤝 Contribución
 
@@ -73,5 +65,4 @@ Visita la demo: [muy pronto](https://.com)
 
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles
 
-
-⌨️ con ❤️ por [SebastianDevp - Desarrollador Full Stack](https://github.com/SebastianDevp)
+⌨️ con ❤️ por [SebastianDevp - Desarrollador Full Stack](https://github.com/SebastianDevps)

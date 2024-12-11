@@ -1,3 +1,5 @@
+import { faCheckCircle, faHandshake, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+
 export const navLinks = [
     { path: '/', label: 'Inicio' },
     { path: '/propiedades', label: 'Propiedades' },
@@ -5,3 +7,23 @@ export const navLinks = [
     { path: '/cabanas', label: 'Cabañas' },
   ];
 
+export const cards = [
+    {
+        titulo: "Requisitos para alquilar",
+        descripcion: "Conocé los requisitos para alquilar una propiedad.",
+        icono: faCheckCircle,
+
+    },
+    {
+        titulo: "Guía para alquilar",
+        descripcion: "Paso a paso y superfácil, todo lo que necesitas saber para alquilar.",
+        icono: faHandshake,
+
+    },
+    {
+        titulo: "Conocé Inmobiliaria",
+        descripcion: "Toda la información sobre cómo usar nuestro portal y mucho más.",
+        icono: faInfoCircle,
+
+    },
+];

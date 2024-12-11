@@ -28,7 +28,7 @@ a{
   animation: slideFromLeft 1s ease-in-out forwards;
   -webkit-animation: slideFromLeft 1s ease-in-out forwards;
 }
-nav, header ,.scrolled,.search-container-home,.inputSearch,.modal{ opacity: 0; animation: slideFromCenter 0.55s ease-in-out forwards; -webkit-animation: slideFromCenter 0.55s ease-in-out forwards;
+ .scrolled,.search-container-home,.inputSearch,.modal{ opacity: 0; animation: slideFromCenter 0.55s ease-in-out forwards; -webkit-animation: slideFromCenter 0.55s ease-in-out forwards;
 }
   
 

@@ -14,9 +14,7 @@ const NavLink = ({ to, children, className = "", onClick }) => {
       to={to}
       onClick={onClick}
       className={`relative ${className} ${
-        isActive 
-          ? 'text-[var(--color1)]' 
-          : 'hover:text-[var(--color1)]'
+        isActive ? "text-[var(--color1)]" : "hover:text-[var(--color1)]"
       }`}
     >
       {children}
@@ -31,8 +29,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-
-  
 
   return (
     <header className="w-full z-50 fixed">

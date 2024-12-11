@@ -13,11 +13,11 @@ export default function Footer() {
                 </div>
                 <div>
                     <h5>Direccion</h5>
-                    <p>Salta, Argentina</p>
+                    <p>Colombia, Medellin</p>
                 </div>
                 <div>
                     <h5>Correo electrónico</h5>
-                    <p>contactcompany@Gutim.com</p>
+                    <p>contactcompany@example.com</p>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
 
             <div className='Copyright'>
-                <p>Copyright © 2023 Todos los derechos reservados</p>
+                <p>Copyright © 2024 Todos los derechos reservados</p>
                 <div class="redes-sociales">
                     <a href="#"><i class='fa fa-facebook'></i></a>
                     <a href="#"><i class='fa fa-instagram'></i></a>

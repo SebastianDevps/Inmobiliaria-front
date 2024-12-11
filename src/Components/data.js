@@ -7,7 +7,7 @@ export const navLinks = [
     { path: '/cabanas', label: 'Cabañas' },
   ];
 
-export const cards = [
+export const cardsTips = [
     {
         titulo: "Requisitos para alquilar",
         descripcion: "Conocé los requisitos para alquilar una propiedad.",
@@ -25,5 +25,5 @@ export const cards = [
         descripcion: "Toda la información sobre cómo usar nuestro portal y mucho más.",
         icono: faInfoCircle,
 
-    },
+    }
 ];

@@ -1,105 +1,160 @@
-import React, { useState, useEffect, useRef } from 'react'
-import './PropiedadesHome.css'
-import { inmobiliario } from '../dataInmobiliarios';
-import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Link } from 'react-router-dom';
-import 'swiper/swiper-bundle.css';
+import React, { useRef } from "react";
+import { inmobiliario } from "../dataInmobiliarios";
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
+import "swiper/swiper-bundle.css";
+import formatPrice from "../../Utils/PriceFormatter";
 
 export default function PropiedadesHome() {
-    const swiperRef = useRef(null);
-    SwiperCore.use([Navigation, Pagination, Autoplay]);
+  const swiperRef = useRef(null);
+  SwiperCore.use([Navigation, Pagination, Autoplay]);
 
-
-
-
-
-
-
-
-    return (
-        <div className='PropiedadesHomeContain'>
-
-
-            <Swiper
-                effect={'coverflow'}
+  return (
+    <div className="py-[10px] px-[3%]">
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        loop={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5 }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        autoplay={{ delay: 3000 }} // Cambia el valor de 'delay' según tus preferencias
+        onSwiper={(swiper) => {
+          // console.log(swiper);
+          swiperRef.current = swiper;
+        }}
+      >
+        {inmobiliario.map((item) => (
+          <SwiperSlide style={{ width: "40vh", margin: "10px" }}>
+            <Link
+              className="w-[40vh] overflow-hidden rounded-lg border border-[#00000037] flex flex-col gap-2"
+              to={`/inmobiliario/${item.id}/${item.titulo}`}
+            >
+              <Swiper
+                effect={"coverflow"}
                 grabCursor={true}
                 loop={true}
-                slidesPerView={'auto'}
-                coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5 }}
-                navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
-                autoplay={{ delay: 3000 }} // Cambia el valor de 'delay' según tus preferencias
-
-                onSwiper={(swiper) => {
-                    console.log(swiper);
-                    swiperRef.current = swiper;
+                slidesPerView={"auto"}
+                coverflowEffect={{
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 2.5,
                 }}
-                id={"swiper_container_scroll"}
-            >
+                navigation={{
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }}
+                autoplay={{ delay: 3000 }} // Cambia el valor de 'delay' según tus preferencias
+                pagination={{ clickable: true }}
+                onSwiper={(swiper) => {
+                //   console.log(swiper);
+                  swiperRef.current = swiper;
+                }}
+              >
+                <SwiperSlide>
+                  <div className="relative">
+                    <img
+                      src={item.img}
+                      alt=""
+                      className="w-full relative h-[25vh] object-cover"
+                    />
+                    {item.descuento > 0 && (
+                      <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
+                        -{item.descuento}% OFF
+                      </span>
+                    )}
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="relative">
+                    <img
+                      src={item.img2}
+                      alt=""
+                      className="w-full relative h-[25vh] object-cover"
+                    />
+                    {item.descuento > 0 && (
+                      <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
+                        -{item.descuento}% OFF
+                      </span>
+                    )}
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="relative">
+                    <img
+                      src={item.img3}
+                      alt=""
+                      className="w-full relative h-[25vh] object-cover"
+                    />
+                    {item.descuento > 0 && (
+                      <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
+                        -{item.descuento}% OFF
+                      </span>
+                    )}
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="relative">
+                    <img
+                      src={item.img4}
+                      alt=""
+                      className="w-full relative h-[25vh] object-cover"
+                    />
+                    {item.descuento > 0 && (
+                      <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
+                        -{item.descuento}% OFF
+                      </span>
+                    )}
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="relative">
+                  <div className="relative">
+                    <img
+                      src={item.img5}
+                      alt=""
+                      className="w-full relative h-[25vh] object-cover"
+                    />
+                    {item.descuento > 0 && (
+                      <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
+                        -{item.descuento}% OFF
+                      </span>
+                    )}
+                  </div>
+                </SwiperSlide>
+              </Swiper>
 
-
-
-
-
-
-                {
-                    inmobiliario.map((item) => (
-                        <SwiperSlide id={"swiperCardScroll"} >
-                            <Link className='cardScroll' to={`/inmobiliario/${item.id}/${item.titulo}`}>
-
-                                <Swiper
-                                    effect={'coverflow'}
-                                    grabCursor={true}
-                                    loop={true}
-                                    slidesPerView={'auto'}
-                                    coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5 }}
-                                    navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
-                                    autoplay={{ delay: 3000 }} // Cambia el valor de 'delay' según tus preferencias
-                                    pagination={{ clickable: true, }}
-                                    onSwiper={(swiper) => {
-                                        console.log(swiper);
-                                        swiperRef.current = swiper;
-                                    }}
-
-                                >
-                                    <SwiperSlide  >
-                                        <img src={item.img} alt="" />
-
-                                    </SwiperSlide>
-                                    <SwiperSlide   >
-                                        <img src={item.img2} alt="" />
-
-                                    </SwiperSlide>
-                                    <SwiperSlide   >
-                                        <img src={item.img3} alt="" />
-
-                                    </SwiperSlide>
-                                    <SwiperSlide >
-                                        <img src={item.img4} alt="" />
-
-                                    </SwiperSlide>
-                                    <SwiperSlide   >
-                                        <img src={item.img5} alt="" />
-
-                                    </SwiperSlide>
-
-                                </Swiper>
-
-                                <div className='cardText'>
-                                    <h3>{item.titulo.slice(0, 30)}</h3>
-                                    <p>{item.descripcion.slice(0, 50)}...</p>
-                                    <h4>USD {item.precio}</h4>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-
-                    ))
-                }
-
-
-            </Swiper>
-
-
-        </div>
-    )
+              <div className="flex flex-col gap-2 py-2 px-2 pb-4">
+                <h3 className="text-[var(--text-color)] text-[16px] font-semibold">
+                  {item.titulo.slice(0, 30)}
+                </h3>
+                <p className="text-[var(--text-color2)] text-[14px] ">
+                  {item.descripcion.slice(0, 50)}{" "}
+                  <span className="text-[var(--color1)] text-sm">{" "}Leer más</span>
+                </p>
+                <div className="flex flex-col gap-1">
+                  {item.descuento > 0 ? (
+                    <h4 className="text-red-500 text-[14px] font-bold">
+                      COP{" "}
+                      {formatPrice(
+                        item.precio - (item.precio * item.descuento) / 100
+                      )}
+                    </h4>
+                  ) : (
+                    <h4 className="text-[var(--color1)] text-[14px] font-bold">
+                      COP {formatPrice(item.precio)}
+                    </h4>
+                  )}
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 }

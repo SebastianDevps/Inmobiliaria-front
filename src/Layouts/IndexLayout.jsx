@@ -26,8 +26,8 @@ export default function IndexLayout() {
       />
       <PropiedadesHome />
       <TilteSection
-        title="Listados de propiedades que te pueden interesar"
-        more="Ver más"
+        title="Te podría interesar"
+        // more="Ver más"
         link="propiedades"
       />
       <ListadoCard />

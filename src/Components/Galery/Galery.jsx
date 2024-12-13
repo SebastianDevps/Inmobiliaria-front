@@ -1,31 +1,49 @@
-import React from 'react'
-import img from '../../images/1.png'
-import img2 from '../../images/2.png'
-import img3 from '../../images/3.png'
-import img4 from '../../images/4.png'
-import img5 from '../../images/5.png'
-import img6 from '../../images/6.png'
-import img7 from '../../images/7.png'
-import './Galery.css'
-import { Link as Anchor } from 'react-router-dom';
+import React, { useMemo } from "react";
+import { inmobiliario } from "../dataInmobiliarios";
+import { Link as Anchor } from "react-router-dom";
+
 export default function Galery() {
+  const randomProperties = useMemo(() => {
+    return [...inmobiliario]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 7)
+      .map((prop) => ({
+        id: prop.id,
+        title: prop.titulo,
+        img: prop.img,
+      }));
+  }, []);
 
-    const imgs = [
-        img, img2, img3, img4, img5, img6, img7
-    ]
-    return (
-        <div className='galeryContain'>
-
-            {
-
-                imgs.map((item) => (
-
-                    <Anchor to={`/propiedades`}>
-                        <img src={item} alt="" />
-                    </Anchor>
-                ))
-            }
-
-        </div>
-    )
+  return (
+    <div className="w-full m-auto py-[10px] px-[3%]">
+      <div
+        className="flex overflow-x-auto gap-6 pb-4 px-2
+                          scroll-smooth hover:scroll-auto
+                          [&::-webkit-scrollbar]:h-2
+                          [&::-webkit-scrollbar-track]:rounded-full
+                        //   [&::-webkit-scrollbar-track]:bg-[var(--color2]
+                          [&::-webkit-scrollbar-thumb]:rounded-full
+                          [&::-webkit-scrollbar-thumb]:bg-[var(--color1)]
+                          [&::-webkit-scrollbar-thumb]:hover:bg-[var(--color1)]"
+      >
+        {randomProperties.map((item) => (
+          <Anchor
+            to={`/inmobiliario/${item.id}/${item.title}`}
+            key={item.id}
+            className="flex-none"
+          >
+            <div className="group cursor-pointer">
+              <img
+                src={item.img}
+                alt={`Propiedad ${item.id}`}
+                className="w-[158px] h-[100px] object-cover rounded-xl
+                                         shadow-lg transition-all duration-300
+                                        group-hover:scale-[1.02]"
+              />
+            </div>
+          </Anchor>
+        ))}
+      </div>
+    </div>
+  );
 }

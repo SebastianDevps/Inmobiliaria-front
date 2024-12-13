@@ -36,7 +36,7 @@ export default function MainLayout() {
           <Header />
           <Outlet />
           <Footer />
-          <Develloper />
+          {/* <Develloper /> */}
           <ButonScroll />
         </>
       )}

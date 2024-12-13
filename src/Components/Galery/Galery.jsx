@@ -17,14 +17,14 @@ export default function Galery() {
   return (
     <div className="w-full m-auto py-[10px] px-[3%]">
       <div
-        className="flex overflow-x-auto gap-6 pb-4 px-2
+        className="flex overflow-x-auto  gap-6 pb-4 px-2
                           scroll-smooth hover:scroll-auto
                           [&::-webkit-scrollbar]:h-2
                           [&::-webkit-scrollbar-track]:rounded-full
                         //   [&::-webkit-scrollbar-track]:bg-[var(--color2]
                           [&::-webkit-scrollbar-thumb]:rounded-full
-                          [&::-webkit-scrollbar-thumb]:bg-[var(--color1)]
-                          [&::-webkit-scrollbar-thumb]:hover:bg-[var(--color1)]"
+                          [&::-webkit-scrollbar-thumb]:bg-transparent
+                          [&::-webkit-scrollbar-thumb]:hover:bg-tansparent"
       >
         {randomProperties.map((item) => (
           <Anchor
@@ -36,9 +36,10 @@ export default function Galery() {
               <img
                 src={item.img}
                 alt={`Propiedad ${item.id}`}
-                className="w-[158px] h-[100px] object-cover rounded-xl
-                                         shadow-lg transition-all duration-300
-                                        group-hover:scale-[1.02]"
+                className="w-[158px] h-[100px] 
+                         xl:w-[220px] xl:h-[140px]
+                         object-cover rounded-xl transition-all duration-300
+                         group-hover:scale-[1.02]"
               />
             </div>
           </Anchor>

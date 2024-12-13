@@ -53,7 +53,7 @@ export default function IndexLayout() {
           />
           <Galery />
           <Footer />
-          <Develloper />
+          {/* <Develloper /> */}
           <ButonScroll />
         </>
       )}

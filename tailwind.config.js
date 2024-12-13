@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-pattern': "url(/src/images/home.png)",
+        'footer-pattern': "url(/src/images/home.png)",
       },
       animation: {
         pulse: 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',

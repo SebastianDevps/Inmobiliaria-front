@@ -4,7 +4,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.css";
-import formatPrice from "../../Utils/PriceFormatter";
+import formatPrice from "../../utils/PriceFormatter";
 
 export default function PropiedadesHome() {
   const swiperRef = useRef(null);
@@ -29,7 +29,7 @@ export default function PropiedadesHome() {
         }}
       >
         {inmobiliario.map((item) => (
-          <SwiperSlide style={{ width: "40vh", margin: "10px" }}>
+          <SwiperSlide key={item.id} style={{ width: "40vh", margin: "10px" }}>
             <Link
               className="w-[40vh] overflow-hidden rounded-lg border border-[#00000037] flex flex-col gap-2"
               to={`/inmobiliario/${item.id}/${item.titulo}`}
@@ -56,76 +56,28 @@ export default function PropiedadesHome() {
                   swiperRef.current = swiper;
                 }}
               >
-                <SwiperSlide>
-                  <div className="relative">
-                    <img
-                      src={item.img}
-                      alt=""
-                      className="w-full relative h-[25vh] object-cover"
-                    />
-                    {item.descuento > 0 && (
-                      <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
-                        -{item.descuento}% OFF
-                      </span>
-                    )}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="relative">
-                    <img
-                      src={item.img2}
-                      alt=""
-                      className="w-full relative h-[25vh] object-cover"
-                    />
-                    {item.descuento > 0 && (
-                      <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
-                        -{item.descuento}% OFF
-                      </span>
-                    )}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="relative">
-                    <img
-                      src={item.img3}
-                      alt=""
-                      className="w-full relative h-[25vh] object-cover"
-                    />
-                    {item.descuento > 0 && (
-                      <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
-                        -{item.descuento}% OFF
-                      </span>
-                    )}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="relative">
-                    <img
-                      src={item.img4}
-                      alt=""
-                      className="w-full relative h-[25vh] object-cover"
-                    />
-                    {item.descuento > 0 && (
-                      <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
-                        -{item.descuento}% OFF
-                      </span>
-                    )}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className="relative">
-                  <div className="relative">
-                    <img
-                      src={item.img5}
-                      alt=""
-                      className="w-full relative h-[25vh] object-cover"
-                    />
-                    {item.descuento > 0 && (
-                      <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
-                        -{item.descuento}% OFF
-                      </span>
-                    )}
-                  </div>
-                </SwiperSlide>
+                {[
+                  { img: item.img, id: 1 },
+                  { img: item.img2, id: 2 },
+                  { img: item.img3, id: 3 },
+                  { img: item.img4, id: 4 },
+                  { img: item.img5, id: 5 }
+                ].map((slide) => (
+                  <SwiperSlide key={`${item.id}-${slide.id}`}>
+                    <div className="relative">
+                      <img
+                        src={slide.img}
+                        alt={`Imagen ${slide.id} de ${item.titulo}`}
+                        className="w-full relative h-[25vh] object-cover"
+                      />
+                      {item.descuento > 0 && (
+                        <span className="absolute -right-12 top-4 bg-gradient-to-r from-red-600 to-red-800 text-white text-[12px] font-bold py-1 px-12 rotate-45 transform origin-center shadow-md before:absolute before:content-[''] before:h-full before:w-full before:top-0 before:left-0">
+                          -{item.descuento}% OFF
+                        </span>
+                      )}
+                    </div>
+                  </SwiperSlide>
+                ))}
               </Swiper>
 
               <div className="flex flex-col gap-2 py-2 px-2 pb-4">

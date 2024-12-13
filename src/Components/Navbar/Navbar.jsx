@@ -3,6 +3,8 @@ import { Link as Anchor, useLocation } from "react-router-dom";
 import InputSearch from "../InputSerach/InputSearchs";
 import logo from "../../images/logo.png";
 import { navLinks } from "../data";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 // Componente NavLink personalizado
 const NavLink = ({ to, children, className = "", onClick }) => {
@@ -18,9 +20,9 @@ const NavLink = ({ to, children, className = "", onClick }) => {
       }`}
     >
       {children}
-      {isActive && (
+      {/* {isActive && (
         <span className="absolute bottom-[-5px] left-0 w-full h-0.5 bg-[var(--color1)] rounded-full" />
-      )}
+      )} */}
     </Anchor>
   );
 };
@@ -37,7 +39,8 @@ export default function Navbar() {
         <Anchor to="/" className="flex items-center p-2 gap-2">
           <img src={logo} alt="logo" className="w-[50px] lg:w-[30px]" />
           <h1 className="text-2xl font-bold text-[var(--color1)] hidden lg:block">
-            Inmobiliaria
+            {/* Inmobiliaria */}
+            <Skeleton className="animate-pulse" width={160} height={25} />
           </h1>
         </Anchor>
 
@@ -49,7 +52,7 @@ export default function Navbar() {
         <div className="hidden lg:flex w-[60%] items-center justify-between">
           <div className="flex gap-4">
             {navLinks.map(({ path, label }) => (
-              <NavLink key={path} to={path}>
+              <NavLink className="lg:text-lg" key={path} to={path}>
                 {label}
               </NavLink>
             ))}
@@ -98,7 +101,8 @@ export default function Navbar() {
               <Anchor to="/" className="flex flex-col items-center p-2 gap-2">
                 <img src={logo} alt="logo" className="w-[50px] lg:w-[30px]" />
                 <h1 className="text-2xl font-bold text-[var(--color1)]">
-                  Inmobiliaria
+                  {/* Inmobiliaria */}
+                  <Skeleton className="animate-pulse" width={160} height={25} />
                 </h1>
               </Anchor>
 

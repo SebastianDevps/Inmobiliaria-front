@@ -59,17 +59,17 @@ export default function Footer() {
                         -ms-border-radius: 10px;
                         -o-border-radius: 10px;"
             >
-              <div class="relative bg-white">
+              <div className="relative bg-white">
                 <input
                   type="email"
                   id="floating_outlined"
                   onChange={(e) => setEmail(e.target.value)}
-                  class="block px-2.5 pb-2.5 pt-4 w-full text-sm bg-white text-gray-900 bg-transparent border-1 border-gray-300 rounded-lg outline-none focus:ring-0 focus:border-blue-600 peer"
+                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm bg-white text-gray-900 bg-transparent border-1 border-gray-300 rounded-lg outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
                 />
                 <label
-                  for="floating_outlined"
-                  class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-900 peer-focus:dark:text-gray-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                  htmlFor="floating_outlined"
+                  className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-900 peer-focus:dark:text-gray-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
                 >
                   Ingresa tu correo
                 </label>
@@ -94,31 +94,27 @@ export default function Footer() {
             <a
               href="https://js-webs.com/"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-[var(--color1)]"
             >
               SebastianDevps
             </a>
           </span>
         </p>
-        <div className="flex gap-2  text-[var(--text-color2)]">
-          <a href="#">
-            {" "}
+        <div className="flex gap-2 text-[var(--text-color2)]">
+          <a href="https://facebook.com/tuempresa">
             <i className="fa fa-facebook"></i>
           </a>
-          <a href="#">
-            {" "}
+          <a href="https://instagram.com/tuempresa">
             <i className="fa fa-instagram"></i>
           </a>
-          <a href="#">
-            {" "}
+          <a href="https://linkedin.com/company/tuempresa">
             <i className="fa fa-linkedin"></i>
           </a>
-          <a href="#">
-            {" "}
+          <a href="https://twitter.com/tuempresa">
             <i className="fa fa-twitter"></i>
           </a>
-          <a href="#">
-            {" "}
+          <a href="https://wa.me/tunumero">
             <i className="fa fa-whatsapp"></i>
           </a>
         </div>

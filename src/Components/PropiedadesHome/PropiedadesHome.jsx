@@ -84,8 +84,8 @@ export default function PropiedadesHome() {
                 <h3 className="text-[var(--text-color)] text-[16px] font-semibold">
                   {item.titulo.slice(0, 30)}
                 </h3>
-                <p className="text-[var(--text-color2)] text-[14px] ">
-                  {item.descripcion.slice(0, 50)}{" "}
+                <p className="text-[var(--text-color2)] uppercase text-[14px] ">
+                  {item.descripcion.slice(0, 60)}{" "}
                   <span className="text-[var(--color1)] text-sm">{" "}Leer más</span>
                 </p>
                 <div className="flex flex-col gap-1">

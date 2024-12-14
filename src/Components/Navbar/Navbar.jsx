@@ -49,7 +49,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex w-[60%] items-center justify-between">
+        <div className="hidden lg:flex w-[55%] items-center justify-between">
           <div className="flex gap-4">
             {navLinks.map(({ path, label }) => (
               <NavLink className="lg:text-lg" key={path} to={path}>

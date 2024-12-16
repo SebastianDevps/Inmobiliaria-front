@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { usePropiedadesStore } from "./propiedadesLogic";
 import ModalFilter from "../../Components/modalFilter/ModalFilter";
-import Utils from "../../utils/utils";
+import { utils } from "../../utils/utils";
 
 export default function Propierties() {
   const swiperRef = useRef(null);
@@ -176,13 +176,13 @@ export default function Propierties() {
                   {item.descuento > 0 ? (
                     <h4 className="text-red-500 text-[14px] font-bold">
                       COP{" "}
-                      {Utils.priceFormatter(
+                      {utils.priceFormatter(
                         item.precio - (item.precio * item.descuento) / 100
                       )}
                     </h4>
                   ) : (
                     <h4 className="text-[var(--color1)] text-[14px] font-bold">
-                      COP {Utils.priceFormatter(item.precio)}
+                      COP {utils.priceFormatter(item.precio)}
                     </h4>
                   )}
                 </div>

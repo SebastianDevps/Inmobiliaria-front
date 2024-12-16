@@ -18,7 +18,7 @@ const generateMachineId = () => {
   return machineId;
 };
 
-const Utils = {
+export const utils = {
   generateMachineId,
   getMachineId: () => {
     let machineId = localStorage.getItem("machineId");
@@ -37,4 +37,3 @@ const Utils = {
   },
 };
 
-export default Utils;

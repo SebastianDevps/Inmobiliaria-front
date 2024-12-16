@@ -1,16 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import footerLogic from "./footerLogic";
-import utils from "../../utils/utils";
+import Utils from "../../utils/utils";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [machineId, setMachineId] = useState("");
 
-  const { getMachineId } = utils;
 
   useEffect(() => {
-    setMachineId(getMachineId());
+    setMachineId(Utils.getMachineId());
   }, []);
 
   const handleSubmit = () => {

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter, faTimes } from "@fortawesome/free-solid-svg-icons";
-import formatPrice from "../../utils/PriceFormatter";
+import { formatPrice } from "../../utils/PriceFormatter";
 import { usePropiedadesStore } from "./propiedadesLogic";
 import ModalFilter from "../../Components/modalFilter/ModalFilter";
 

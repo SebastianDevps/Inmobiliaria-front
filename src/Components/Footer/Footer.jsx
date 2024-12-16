@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import footerLogic from "./footerLogic";
-import { getMachineId } from "../../utils/machineId";
+import footerLogic, { getMachineId } from "./footerLogic";
 
 export default function Footer() {
   const [email, setEmail] = useState("");

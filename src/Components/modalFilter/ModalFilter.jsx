@@ -1,7 +1,7 @@
 import React from "react";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { priceFormatter } from "../../utils/PriceFormatter";
+import utils from "../../utils/utils";
 import { usePropiedadesStore } from "../../Pages/PagePropiedades/propiedadesLogic";
 import { inmobiliario } from "../../Components/dataInmobiliarios";
 import { useModalFilter } from "./modalLogic";
@@ -15,6 +15,8 @@ const ModalFilter = ({ isOpen, onClose }) => {
     setPriceRange,
     handleLocationChange,
   } = usePropiedadesStore();
+
+  const { priceFormatter } = utils;
 
   const { handleModalClick } = useModalFilter();
   const ubicacionesUnicas = [...new Set(inmobiliario.map(item => item.ubicacion))];

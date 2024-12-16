@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { usePropiedadesStore } from "./propiedadesLogic";
 import ModalFilter from "../../Components/modalFilter/ModalFilter";
+import utils from "../../utils/utils";
 
 export default function Propierties() {
   const swiperRef = useRef(null);
@@ -24,10 +25,10 @@ export default function Propierties() {
     setIsFilterOpen,
     clearFilters,
     getFilteredProperties,
-    priceFormatter,
     handleLocationChange,
   } = usePropiedadesStore();
 
+  const { priceFormatter } = utils;
   const filteredProperties = getFilteredProperties();
   const noResults = filteredProperties.length === 0;
 

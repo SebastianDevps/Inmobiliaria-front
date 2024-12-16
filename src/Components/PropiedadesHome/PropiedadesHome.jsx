@@ -4,11 +4,13 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.css";
-import { priceFormatter } from "../../utils/PriceFormatter";
+import utils from "../../utils/utils";
 
 export default function PropiedadesHome() {
   const swiperRef = useRef(null);
   SwiperCore.use([Navigation, Pagination, Autoplay]);
+
+  const { priceFormatter } = utils;
 
   return (
     <div className="py-[10px] px-[3%]">

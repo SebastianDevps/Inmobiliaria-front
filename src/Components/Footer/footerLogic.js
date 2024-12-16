@@ -8,19 +8,23 @@ const footerLogic = async (props) => {
 
   try {
     if (!props.machineId) {
-      toast.error("Error de identificación del dispositivo, intente nuevamente");
+      toast.error(
+        "Error de identificación del dispositivo, intente nuevamente"
+      );
       return;
     }
 
     // Verificar último envío de este dispositivo
-    const lastSubmission = localStorage.getItem(`lastSubmission_${props.machineId}`);
+    const lastSubmission = localStorage.getItem(
+      `lastSubmission_${props.machineId}`
+    );
     const now = new Date().getTime();
 
     if (lastSubmission) {
       const timeDiff = now - parseInt(lastSubmission);
       // Permitir solo un envío cada 24 horas
       if (timeDiff < 24 * 60 * 60 * 1000) {
-        toast.warning('Por favor espere 24 horas antes de enviar otro email');
+        toast.warning("Por favor espere 24 horas antes de enviar otro email");
         return;
       }
     }
@@ -33,7 +37,6 @@ const footerLogic = async (props) => {
     } else {
       toast.error("Por favor, ingresa un correo electrónico válido");
     }
-
   } catch (error) {
     toast.error("Hubo un error al procesar su solicitud");
     console.error(error);
@@ -50,16 +53,6 @@ const generateMachineId = () => {
     window.screen.width + "x" + window.screen.height,
   ];
 
-
-  const getMachineId = () => {
-    let machineId = localStorage.getItem("machineId");
-    if (!machineId) {
-      machineId = generateMachineId();
-    }
-    return machineId;
-  };
-
-
   const hash = components.join("|");
   let machineId = "";
   for (let i = 0; i < hash.length; i++) {
@@ -70,10 +63,17 @@ const generateMachineId = () => {
   return machineId;
 };
 
+export const getMachineId = () => {
+  let machineId = localStorage.getItem("machineId");
+  if (!machineId) {
+    machineId = generateMachineId();
+  }
+  return machineId;
+};
+
 function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
-
 
 export default footerLogic;

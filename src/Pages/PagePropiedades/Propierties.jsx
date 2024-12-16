@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { usePropiedadesStore } from "./propiedadesLogic";
 import ModalFilter from "../../Components/modalFilter/ModalFilter";
-import { utils } from "../../utils/utils";
+import { utils } from "../../utils/Utils";
 
 export default function Propierties() {
   const swiperRef = useRef(null);

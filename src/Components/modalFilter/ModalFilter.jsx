@@ -1,7 +1,7 @@
 import React from "react";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { utils } from "../../utils/utils";
+import { utils } from "../../utils/Utils";
 import { usePropiedadesStore } from "../../Pages/PagePropiedades/propiedadesLogic";
 import { inmobiliario } from "../../Components/dataInmobiliarios";
 import { useModalFilter } from "./modalLogic";

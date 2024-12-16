@@ -4,7 +4,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.css";
-import { utils } from "../../utils/utils";
+import { utils } from "../../utils/Utils";
 
 export default function PropiedadesHome() {
   const swiperRef = useRef(null);

@@ -1,8 +1,8 @@
 import './App.css';
-import { router, } from "./Pages/index";
+import { router, } from "./router/router";
 import { RouterProvider } from "react-router-dom";
 import React from 'react'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 

@@ -2,131 +2,113 @@ import React from "react";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import formatPrice from "../../utils/PriceFormatter";
-import { usePropiedadesLogic } from "../Propiedades/propiedadesLogic";
+import { usePropiedadesStore } from "../../Pages/PagePropiedades/propiedadesLogic";
+import { inmobiliario } from "../../Components/dataInmobiliarios";
+import { useModalFilter } from "./modalLogic";
 
-const ModalFilter = ({ isOpen, onClose, onApply, onClear }) => {
+const ModalFilter = ({ isOpen, onClose }) => {
   const {
-    searchTerm,
-    setSearchTerm,
     selectedLocations,
     withDescuento,
-    setWithDescuento,
     priceRange,
+    setWithDescuento,
     setPriceRange,
-    ubicacionesUnicas,
     handleLocationChange,
-  } = usePropiedadesLogic();
+  } = usePropiedadesStore();
+
+  const { handleModalClick } = useModalFilter();
+  const ubicacionesUnicas = [...new Set(inmobiliario.map(item => item.ubicacion))];
 
   return (
     <div
+      onClick={onClose}
       className={`fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity ${
         isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
       <div
-        className={`fixed right-0 top-0 h-full w-[300px] sm:w-[540px] bg-white transform transition-transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        onClick={handleModalClick}
+        className={`fixed right-0 top-0 h-full w-[300px] sm:w-[500px] bg-white transform transition-transform ${
+          isOpen ? "translate-x-0 transition-all duration-700" : "translate-x-full transition-all duration-700"
         }`}
       >
-        <div className="w-full max-w-4xl mx-auto space-y-4 p-4">
-          <div className="flex justify-between items-center">
+        <div className="p-6">
+          {/* Header */}
+          <div className="flex justify-between items-start mb-6">
             <div>
-              <h2 className="text-lg font-semibold">Filtros de búsqueda</h2>
-              <p className="text-sm text-gray-500">
+              <h2 className="text-xl font-semibold mb-1">Filtros de búsqueda</h2>
+              <p className="text-sm flex flex-col gap-1 text-gray-600">
                 Ajusta los filtros para encontrar la propiedad perfecta
+                <span className="text-xs text-gray-400">
+                  El precio de las propiedades esta sujeto a la moneda Colombiana (COP)
+                </span>
               </p>
             </div>
-            <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+            <button 
+              onClick={onClose}
+              className="text-gray-400 hover:text-gray-600"
+              aria-label="Cerrar"
+            >
               <FontAwesomeIcon icon={faTimes} />
             </button>
           </div>
 
-          <div className="grid gap-6 py-4">
-            {/* Filtro de precio */}
-            <div className="space-y-4">
-              <h3 className="font-medium">Filtrar por precio:</h3>
-              <div className="space-y-4">
-                <input
-                  type="range"
-                  min="300000"
-                  max="100000000"
-                  value={priceRange.min}
-                  onChange={(e) =>
-                    setPriceRange({ ...priceRange, min: e.target.value })
-                  }
-                  className="w-full"
-                />
-                <input
-                  type="range"
-                  min="300000"
-                  max="100000000"
-                  value={priceRange.max}
-                  onChange={(e) =>
-                    setPriceRange({ ...priceRange, max: e.target.value })
-                  }
-                  className="w-full"
-                />
-                <div className="flex justify-between text-sm">
-                  <span>{formatPrice(priceRange.min)}</span>
-                  <span>{formatPrice(priceRange.max)}</span>
-                </div>
-              </div>
+          {/* Filtro de precio */}
+          <div className="mb-8">
+            <h3 className="font-medium mb-4">Filtrar por precio:</h3>
+            <input
+              type="range"
+              min="300000"
+              max="100000000"
+              value={priceRange.min}
+              onChange={(e) =>
+                setPriceRange({ ...priceRange, min: e.target.value })
+              }
+              className="w-full mb-2 accent-blue-600"
+            />
+            <div className="flex justify-between text-sm text-gray-600">
+              <span>{formatPrice(priceRange.min)}</span>
+              <span>{formatPrice(priceRange.max)}</span>
             </div>
+          </div>
 
-            {/* Filtro de descuento */}
-            <div className="space-y-4">
-              <h3 className="font-medium">Propiedades con descuento</h3>
-              <div className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="discount"
-                  checked={withDescuento}
-                  onChange={() => setWithDescuento(!withDescuento)}
-                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                />
-                <label htmlFor="discount" className="text-sm text-gray-700">
-                  Mostrar solo propiedades con descuento
+          {/* Filtro de descuento */}
+          <div className="mb-8">
+            <h3 className="font-medium mb-4">Propiedades con descuento</h3>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={withDescuento}
+                onChange={() => setWithDescuento(!withDescuento)}
+                className="w-4 h-4 rounded border-gray-300"
+              />
+              <span className="text-sm">
+                Mostrar solo propiedades con descuento
+              </span>
+            </label>
+          </div>
+
+          {/* Filtro de ubicación */}
+          <div className="mb-8">
+            <h3 className="font-medium mb-4">Filtrar por ubicación:</h3>
+            <div className="max-h-[300px] overflow-y-auto pr-2">
+              {ubicacionesUnicas.map((location) => (
+                <label
+                  key={location}
+                  className="flex items-center gap-2 py-2 cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    checked={selectedLocations.includes(location)}
+                    onChange={() => handleLocationChange(location)}
+                    className="w-4 h-4 rounded border-gray-300"
+                  />
+                  <span className="text-sm">{location}</span>
                 </label>
-              </div>
-            </div>
-
-            {/* Filtro de ubicación */}
-            <div className="space-y-4">
-              <h3 className="font-medium">Filtrar por ubicación:</h3>
-              <div className="grid gap-2 max-h-[200px] overflow-y-auto">
-                {ubicacionesUnicas.map((location) => (
-                  <div key={location} className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      id={location}
-                      checked={selectedLocations.includes(location)}
-                      onChange={() => handleLocationChange(location)}
-                      className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                    />
-                    <label htmlFor={location} className="text-sm text-gray-700">
-                      {location}
-                    </label>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Botones de acción */}
-          <div className="flex justify-end gap-2 pt-4 border-t">
-            <button
-              onClick={onClear}
-              className="px-4 py-2 text-sm text-gray-600 hover:text-gray-800 bg-gray-100 rounded-md"
-            >
-              Limpiar filtros
-            </button>
-            <button
-              onClick={onApply}
-              className="px-4 py-2 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded-md"
-            >
-              Aplicar filtros
-            </button>
-          </div>
         </div>
       </div>
     </div>

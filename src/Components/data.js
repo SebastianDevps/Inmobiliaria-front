@@ -7,8 +7,9 @@ import {
 export const navLinks = [
   { path: "/", label: "Inicio" },
   { path: "/propiedades", label: "Propiedades" },
-  { path: "/alquileres", label: "Alquileres" },
-  { path: "/cabanas", label: "Cabañas" },
+  { path: "/sobre-nosotros", label: "Sobre Nosotros" },
+  { path: "/servicios", label: "Servicios" },
+  { path: "/contacto", label: "Contacto" },
 ];
 
 export const cardsTips = [

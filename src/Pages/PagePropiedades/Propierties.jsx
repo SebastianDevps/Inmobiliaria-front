@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { priceFormatter } from "../../utils/PriceFormatter.js";
 import { usePropiedadesStore } from "./propiedadesLogic";
 import ModalFilter from "../../Components/modalFilter/ModalFilter";
 
@@ -25,6 +24,7 @@ export default function Propierties() {
     setIsFilterOpen,
     clearFilters,
     getFilteredProperties,
+    priceFormatter,
     handleLocationChange,
   } = usePropiedadesStore();
 

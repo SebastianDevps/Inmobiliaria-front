@@ -36,6 +36,15 @@ export const usePropiedadesStore = create((set, get) => ({
     }
   }),
 
+  priceFormatter: (price) => {
+    return new Intl.NumberFormat("es-CO", {
+      style: "currency",
+      currency: "COP",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(price);
+  },
+
   getFilteredProperties: () => {
     const { searchTerm, selectedLocations, priceRange, withDescuento } = get();
     
@@ -49,4 +58,6 @@ export const usePropiedadesStore = create((set, get) => ({
       return matchesSearch && matchesLocation && matchesPrice && (withDescuento ? withDiscount : true);
     });
   }
+
+
 }));

@@ -40,6 +40,36 @@ const footerLogic = async (props) => {
   }
 };
 
+const generateMachineId = () => {
+  const components = [
+    navigator.userAgent,
+    navigator.language,
+    new Date().getTimezoneOffset(),
+    navigator.hardwareConcurrency,
+    window.screen.colorDepth,
+    window.screen.width + "x" + window.screen.height,
+  ];
+
+
+  const getMachineId = () => {
+    let machineId = localStorage.getItem("machineId");
+    if (!machineId) {
+      machineId = generateMachineId();
+    }
+    return machineId;
+  };
+
+
+  const hash = components.join("|");
+  let machineId = "";
+  for (let i = 0; i < hash.length; i++) {
+    machineId += hash.charCodeAt(i).toString(16);
+  }
+
+  localStorage.setItem("machineId", machineId);
+  return machineId;
+};
+
 function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);

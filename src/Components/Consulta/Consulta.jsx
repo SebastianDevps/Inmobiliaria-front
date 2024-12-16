@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import './Consulta.css';
-import axios from 'axios';
 import Spiral from '../../Components/Spiral/Spiral'
 export default function Consulta() {
     const dataForm = useRef();

@@ -4,7 +4,6 @@ import { Outlet } from "react-router-dom";
 import Loading from "../Components/Loading/Loading";
 import ButonScroll from "../Components/ButonScroll/ButonScroll";
 import Footer from "../Components/Footer/Footer";
-import Develloper from "../Components/Developer/Developer";
 
 export default function MainLayout() {
   const [isLoading, setIsLoading] = useState(true);

@@ -1,7 +1,5 @@
 import React from 'react'
 import './Register.css'
-import { useRef, useEffect } from "react";
-import axios from 'axios'
 import img from '../../images/google.png'
 
 

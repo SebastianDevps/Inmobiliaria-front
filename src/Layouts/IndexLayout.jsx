@@ -7,7 +7,6 @@ import Hero from "../Components/Hero/Hero";
 import CardsHome from "../Components/CardsHome/CardsHome";
 import PropiedadesHome from "../Components/PropiedadesHome/PropiedadesHome";
 import TilteSection from "../Components/TilteSection/TilteSection";
-import Develloper from "../Components/Developer/Developer";
 import Galery from "../Components/Galery/Galery";
 
 export default function IndexLayout() {

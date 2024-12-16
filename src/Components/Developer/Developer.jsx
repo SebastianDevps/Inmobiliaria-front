@@ -6,7 +6,7 @@ export default function Developer() {
             <p>
                 Desarrollado por
             </p>
-            <a className='developerLink' href="https://js-webs.com/" target='_blank'>SebastianDevps</a>
+            <a className='developerLink' href="https://js-webs.com/" rel="noreferrer" target='_blank'>SebastianDevps</a>
  
 
 

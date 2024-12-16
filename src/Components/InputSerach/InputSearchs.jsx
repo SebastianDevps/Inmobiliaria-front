@@ -75,7 +75,7 @@ export default function InputSearch({
       </div>
 
       {/* Estilos para la scrollbar */}
-      <style jsx>{`
+      <style jsx="true">{`
         .overflow-y-auto::-webkit-scrollbar {
           width: 7px;
           height: 7px;

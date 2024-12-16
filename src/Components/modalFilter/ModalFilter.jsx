@@ -1,7 +1,7 @@
 import React from "react";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import formatPrice from "../../utils/PriceFormatter";
+import { priceFormatter } from "../../utils/PriceFormatter";
 import { usePropiedadesStore } from "../../Pages/PagePropiedades/propiedadesLogic";
 import { inmobiliario } from "../../Components/dataInmobiliarios";
 import { useModalFilter } from "./modalLogic";
@@ -67,8 +67,8 @@ const ModalFilter = ({ isOpen, onClose }) => {
               className="w-full mb-2 accent-blue-600"
             />
             <div className="flex justify-between text-sm text-gray-600">
-              <span>{formatPrice(priceRange.min)}</span>
-              <span>{formatPrice(priceRange.max)}</span>
+              <span>{priceFormatter(priceRange.min)}</span>
+              <span>{priceFormatter(priceRange.max)}</span>
             </div>
           </div>
 

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { formatPrice } from "../../utils/PriceFormatter";
+import { priceFormatter } from "../../utils/PriceFormatter";
 import { usePropiedadesStore } from "./propiedadesLogic";
 import ModalFilter from "../../Components/modalFilter/ModalFilter";
 
@@ -40,7 +40,7 @@ export default function Propierties() {
   }, []);
 
   return (
-    <div className="py-[130px] px-[3%]">
+    <div className="py-[130px] xl:px-[5%] lg:px-[3%] px-[3%]">
       <div className="flex w-full gap-4 mb-6">
         <div className="relative">
           <FontAwesomeIcon
@@ -176,13 +176,13 @@ export default function Propierties() {
                   {item.descuento > 0 ? (
                     <h4 className="text-red-500 text-[14px] font-bold">
                       COP{" "}
-                      {formatPrice(
+                      {priceFormatter(
                         item.precio - (item.precio * item.descuento) / 100
                       )}
                     </h4>
                   ) : (
                     <h4 className="text-[var(--color1)] text-[14px] font-bold">
-                      COP {formatPrice(item.precio)}
+                      COP {priceFormatter(item.precio)}
                     </h4>
                   )}
                 </div>

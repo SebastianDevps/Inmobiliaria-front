@@ -4,7 +4,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.css";
-import formatPrice from "../../utils/PriceFormatter";
+import { priceFormatter } from "../../utils/PriceFormatter";
 
 export default function PropiedadesHome() {
   const swiperRef = useRef(null);
@@ -85,20 +85,20 @@ export default function PropiedadesHome() {
                   {item.titulo.slice(0, 30)}
                 </h3>
                 <p className="text-[var(--text-color2)] uppercase text-[14px] ">
-                  {item.descripcion.slice(0, 60)}{" "}
+                  {item.descripcion.slice(0, 50)}{" "}
                   <span className="text-[var(--color1)] text-sm">{" "}Leer más</span>
                 </p>
                 <div className="flex flex-col gap-1">
                   {item.descuento > 0 ? (
                     <h4 className="text-red-500 text-[14px] font-bold">
                       COP{" "}
-                      {formatPrice(
+                      {priceFormatter(
                         item.precio - (item.precio * item.descuento) / 100
                       )}
                     </h4>
                   ) : (
                     <h4 className="text-[var(--color1)] text-[14px] font-bold">
-                      COP {formatPrice(item.precio)}
+                      COP {priceFormatter(item.precio)}
                     </h4>
                   )}
                 </div>

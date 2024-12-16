@@ -1,4 +1,4 @@
-const formatPrice = (price) => {
+export const formatPrice = (price) => {
     return new Intl.NumberFormat('es-CO', {
       style: 'currency',
       currency: 'COP',
@@ -6,5 +6,3 @@ const formatPrice = (price) => {
       maximumFractionDigits: 0,
     }).format(price);
   };
-  
-  export default formatPrice;

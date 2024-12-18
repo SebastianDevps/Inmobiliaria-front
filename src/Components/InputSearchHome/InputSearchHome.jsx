@@ -50,7 +50,7 @@ export default function InputSearchHome() {
                     {filteredInmobiliario.map((item) => (
                         <div key={item.id}>
 
-                            <Link to={`/inmobiliario/${item.id}/${item.titulo}`}>
+                            <Link to={`/propiedades/${item.id}/${item.titulo}`}>
                                 <FontAwesomeIcon icon={faSignOutAlt} /> <p>{item.titulo} - {item.categoria}</p>
                             </Link>
                         </div>

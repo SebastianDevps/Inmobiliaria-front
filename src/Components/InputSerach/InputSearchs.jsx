@@ -55,7 +55,7 @@ export default function InputSearch({
             {filteredInmobiliario.map((item) => (
               <div key={item.id}>
                 <Link
-                  to={`/inmobiliario/${item.id}/${item.titulo}`}
+                  to={`/propiedades/${item.id}/${item.titulo}`}
                   className="flex items-center gap-5 p-2.5 text-[var(--color1)] hover:bg-[var(--color1)] hover:text-white rounded-lg transition-all duration-500 no-underline"
                 >
                   <FontAwesomeIcon icon={faSignOutAlt} />

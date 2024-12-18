@@ -4,7 +4,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import "swiper/swiper-bundle.css";
-import priceFormatter from "./propiedadesHomeLogic";
+import Price from "../Price/Price"; 
 
 export default function PropiedadesHome() {
   const swiperRef = useRef(null);
@@ -32,7 +32,7 @@ export default function PropiedadesHome() {
           <SwiperSlide key={item.id} style={{ width: "40vh", margin: "10px" }}>
             <Link
               className="w-[40vh] overflow-hidden rounded-lg border border-[#00000037] flex flex-col gap-2"
-              to={`/inmobiliario/${item.id}/${item.titulo}`}
+              to={`/propiedades/${item.id}/${item.titulo}`}
             >
               <Swiper
                 effect={"coverflow"}
@@ -88,20 +88,8 @@ export default function PropiedadesHome() {
                   {item.descripcion.slice(0, 50)}{" "}
                   <span className="text-[var(--color1)] text-sm">{" "}Leer más</span>
                 </p>
-                <div className="flex flex-col gap-1">
-                  {item.descuento > 0 ? (
-                    <h4 className="text-red-500 text-[14px] font-bold">
-                      COP{" "}
-                      {priceFormatter(
-                        item.precio - (item.precio * item.descuento) / 100
-                      )}
-                    </h4>
-                  ) : (
-                    <h4 className="text-[var(--color1)] text-[14px] font-bold">
-                      COP {priceFormatter(item.precio)}
-                    </h4>
-                  )}
-                </div>
+                
+                <Price price={item.precio} descuento={item.descuento} />
               </div>
             </Link>
           </SwiperSlide>

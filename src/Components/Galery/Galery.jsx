@@ -28,7 +28,7 @@ export default function Galery() {
       >
         {randomProperties.map((item) => (
           <Anchor
-            to={`/inmobiliario/${item.id}/${item.title}`}
+            to={`/propiedades/${item.id}/${item.title}`}
             key={item.id}
             className="flex-none"
           >

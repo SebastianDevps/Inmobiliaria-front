@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {
-                path: "/inmobiliario/:id/:inmobiliario",
+                path: "/propiedades/:id/:titulo",
                 element: <PageDetail />,
             },
             {

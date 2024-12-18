@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { usePropiedadesStore } from "./propiedadesLogic";
 import ModalFilter from "../../Components/modalFilter/ModalFilter";
+import Price from "../../Components/Price/Price";
 
 export default function Propierties() {
   const swiperRef = useRef(null);
@@ -25,7 +26,6 @@ export default function Propierties() {
     clearFilters,
     getFilteredProperties,
     handleLocationChange,
-    priceFormatter,
   } = usePropiedadesStore();
 
   const filteredProperties = getFilteredProperties();
@@ -114,8 +114,8 @@ export default function Propierties() {
           filteredProperties.slice(0, propertiesToShow).map((item) => (
             <Link
               key={item.id}
-              className="w-full xl:w-[44vh] lg:w-[32vh] overflow-hidden rounded-lg border-[0.3px] border-[#00000037]"
-              to={`/inmobiliario/${item.id}/${item.titulo}`}
+              className="w-full xl:w-[42vh] lg:w-[32vh] overflow-hidden rounded-lg border-[0.3px] border-[#00000037]"
+              to={`/propiedades/${item.id}/${item.titulo}`}
             >
               <Swiper
                 effect={"coverflow"}
@@ -172,20 +172,7 @@ export default function Propierties() {
                     Leer más
                   </span>
                 </p>
-                <div className="flex flex-col gap-1">
-                  {item.descuento > 0 ? (
-                    <h4 className="text-red-500 text-[14px] font-bold">
-                      COP{" "}
-                      {priceFormatter(
-                        item.precio - (item.precio * item.descuento) / 100
-                      )}
-                    </h4>
-                  ) : (
-                    <h4 className="text-[var(--color1)] text-[14px] font-bold">
-                      COP {priceFormatter(item.precio)}
-                    </h4>
-                  )}
-                </div>
+                <Price price={item.precio} descuento={item.descuento} />
               </div>
             </Link>
           ))

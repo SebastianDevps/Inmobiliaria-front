@@ -3,7 +3,6 @@ import { Link as Anchor, useLocation } from "react-router-dom";
 import InputSearch from "../InputSerach/InputSearchs";
 import logo from "../../images/logo.png";
 import { navLinks } from "../data";
-
 // Componente NavLink personalizado
 const NavLink = ({ to, children, className = "", onClick }) => {
   const location = useLocation();

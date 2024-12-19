@@ -1,7 +1,7 @@
 import IndexLayout from "../Layouts/IndexLayout";
 import MainLayout from "../Layouts/MainLayout";
 import { createBrowserRouter } from "react-router-dom";
-import PageDetail from '../Pages/PageDetail/PageDetail'
+import PageDetail from '../Pages/PageDetail/Detail'
 import PagePropiedades from '../Pages/PagePropiedades/Propierties'
 import PageAboutUs from '../Pages/PageAboutUs/About'
 import PageServices from '../Pages/PageServices/Services'

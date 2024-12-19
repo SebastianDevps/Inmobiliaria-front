@@ -127,52 +127,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="relative pt-10 mb-10">
-
-        {/* Contenido */}
-        <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-          <div className="relative rounded-2xl px-6 py-10 bg-[var(--color1)] overflow-hidden shadow-xl sm:px-12 sm:py-20">
-            <div aria-hidden="true" className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
-              <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1463 360">
-                <path className="text-blue-600 text-opacity-40" fill="currentColor" d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"></path>
-                <path className="text-blue-800 text-opacity-40" fill="currentColor" d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"></path>
-              </svg>
-            </div>
-
-            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="text-left max-w-2xl">
-                <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                  ¿Listo para encontrar tu hogar ideal?
-                </h2>
-                <p className="mt-6 text-lg text-white/90">
-                  Nuestro equipo de expertos está preparado para guiarte en cada paso del camino hacia tu nueva propiedad.
-                </p>
-              </div>
-
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-white to-blue-400 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-                <button className="relative flex items-center gap-2 px-8 py-4 bg-white text-[var(--color1)] rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300">
-                  <span>Contáctanos Ahora</span>
-                  <svg 
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth="2" 
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

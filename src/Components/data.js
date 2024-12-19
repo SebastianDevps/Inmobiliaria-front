@@ -15,8 +15,8 @@ import {
 export const navLinks = [
   { path: "/", label: "Inicio" },
   { path: "/sobre-nosotros", label: "Sobre Nosotros" },
-  { path: "/propiedades", label: "Propiedades" },
   { path: "/servicios", label: "Servicios" },
+  { path: "/propiedades", label: "Propiedades" },
   { path: "/contacto", label: "Contacto" },
 ];
 
@@ -143,4 +143,71 @@ export const teamMembers = [
     titleSatisfaction: "Calidad",
     image: faAward,
   },
+];
+
+export const services = [
+  {
+    id: 1,
+    title: "Compra y venta de propiedades",
+    icon: "🏠",
+    description: "Compra y venta de propiedades en todo el país."
+  },
+  {
+    id: 2,
+    title: "Alquiler de inmuebles",
+    icon: "⚡",
+    description: "Alquiler de inmuebles en todo el país."
+  },
+  {
+    id: 3,
+    title: "Transferencias bancarias",
+    icon: "💳",
+    description: "Transferencias bancarias a bancos de todo el país."
+  },
+  {
+    id: 4,
+    title: "Asesoramiento en ventas",
+    icon: "💰",
+    description: "Asesoramiento en ventas de propiedades en todo el país."
+  },
+  {
+    id: 5,
+    title: "Gestión de propiedades",
+    icon: "🔑",
+    description: "Gestión de propiedades en todo el país."
+  },
+  {
+    id: 6,
+    title: "Asesoramiento legal",
+    icon: "⚖️",
+    description: "Asesoramiento legal en todo el país."
+  },
+  {
+    id: 7,
+    title: "Asesoramiento financiero",
+    icon: "💵",
+    description: "Asesoramiento financiero en todo el país."
+  },
+  {
+    id: 8,
+    title: "Asesoramiento en inversiones",
+    icon: "📈",
+    description: "Asesoramiento en inversiones en todo el país."
+  },
+  {
+    id: 9,
+    title: "Gestión de impuestos",
+    icon: "📦",
+    description: "Gestión de impuestos para particulares y empresas."
+  }
+];
+
+export const horariosDisponibles = [
+  { dia: "Lunes", horario: "9:00 - 18:00" },
+  { dia: "Martes", horario: "9:00 - 18:00" },
+  { dia: "Miércoles", horario: "9:00 - 18:00" },
+  { dia: "Jueves", horario: "9:00 - 18:00" },
+  { dia: "Viernes", horario: "9:00 - 17:00" },
+  { dia: "Sábado", horario: "10:00 - 14:00" },
+  { dia: "Domingo", horario: "Cerrado" },
 ];

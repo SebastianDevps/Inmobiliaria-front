@@ -1,23 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import footerLogic, { getMachineId } from "./footerLogic";
-
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [machineId, setMachineId] = useState("");
-
-
-  useEffect(() => {
-    setMachineId(getMachineId());
-  }, []);
-
-  const handleSubmit = () => {
-    const props = {
-      email: email,
-      machineId: machineId,
-    };
-    footerLogic(props);
-  };
 
   return (
     <div className="w-full h-full py-2 px-[2%] lg:px-[5%] bg-gray-100 ">
@@ -42,49 +24,69 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-cover bg-no-repeat bg-footer-pattern h-[20%] w-full flex items-center justify-center rounded-lg py-[30px] px-0">
-        <div className="w-full flex flex-col md:flex-row gap-[5rem] py-[40px] px-[20px] border-none justify-between">
-          <div className="text-white">
-            <h6 className="text-[25px] md:text-[30px] font-semibold">
-              SUSCRÍBASE A NUESTRA LISTA DE CORREO
-            </h6>
-            <p className="text-[16px]">
-              Regístrese para recibir la información más reciente
-            </p>
-          </div>
-          <form action="">
-            <fieldset
-              className="flex border-none rounded-lg  overflow-hidden -webkit-border-radius: 10px;
-                        -moz-border-radius: 10px;
-                        -ms-border-radius: 10px;
-                        -o-border-radius: 10px;"
+      {/* Contact CTA */}
+      <section className="relative">
+        {/* Contenido */}
+        <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+          <div className="relative rounded-2xl px-6 py-10 bg-[var(--color1)] overflow-hidden shadow-xl sm:px-12 sm:py-20">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0"
             >
-              <div className="relative bg-white">
-                <input
-                  type="email"
-                  id="floating_outlined"
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="block px-2.5 pb-2.5 pt-4 w-full text-sm bg-white text-gray-900 bg-transparent border-1 border-gray-300 rounded-lg outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                />
-                <label
-                  htmlFor="floating_outlined"
-                  className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-gray-900 peer-focus:dark:text-gray-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
-                >
-                  Ingresa tu correo
-                </label>
-              </div>
-              <button
-                type="button"
-                onClick={() => handleSubmit()}
-                className="bg-[var(--color1)] text-white py-[14px] px-[30px] rounded-r-2xl"
+              <svg
+                className="absolute inset-0 h-full w-full"
+                preserveAspectRatio="xMidYMid slice"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 1463 360"
               >
-                Enviar
-              </button>
-            </fieldset>
-          </form>
+                <path
+                  className="text-blue-600 text-opacity-40"
+                  fill="currentColor"
+                  d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
+                ></path>
+                <path
+                  className="text-blue-800 text-opacity-40"
+                  fill="currentColor"
+                  d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
+                ></path>
+              </svg>
+            </div>
+
+            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="text-left max-w-2xl">
+                <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
+                  ¿Listo para encontrar tu hogar ideal?
+                </h2>
+                <p className="mt-6 text-lg text-white/90">
+                  Nuestro equipo de expertos está preparado para guiarte en cada
+                  paso del camino hacia tu nueva propiedad.
+                </p>
+              </div>
+
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-white to-blue-400 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                <button className="relative flex items-center gap-2 px-8 py-4 bg-white text-[var(--color1)] rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300">
+                  <span>Contáctanos Ahora</span>
+                  <svg
+                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       <div className="w-full flex flex-col-reverse md:flex-row items-center justify-between py-[30px]">
         <p className="text-center flex flex-col lg:gap-2 items-center justify-center lg:flex-row">

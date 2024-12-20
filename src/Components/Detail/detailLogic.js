@@ -37,7 +37,7 @@ export const useDetailLogic = (id) => {
     e.preventDefault();
 
     // Número de WhatsApp (reemplaza con tu número)
-    const phoneNumber = "573017317519";
+    const phoneNumber = "571234567890";
 
     // Crear mensaje formateado
     const message = `

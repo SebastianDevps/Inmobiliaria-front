@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 export default function Footer() {
 
   return (
@@ -67,7 +68,9 @@ export default function Footer() {
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-white to-blue-400 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
                 <button className="relative flex items-center gap-2 px-8 py-4 bg-white text-[var(--color1)] rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300">
-                  <span>Contáctanos Ahora</span>
+                  <Link to="/contacto">
+                    <span>Contáctanos Ahora</span>
+                  </Link>
                   <svg
                     className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                     fill="none"

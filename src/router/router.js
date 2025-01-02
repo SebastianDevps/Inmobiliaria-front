@@ -7,6 +7,8 @@ import PageAboutUs from '../Pages/PageAboutUs/About'
 import PageServices from '../Pages/PageServices/Services'
 import PageLogin from "../Pages/PageLogin/PageLogin";
 import ErrorPage from "../Components/PageNotFound/ErrorPage";
+import PageContact from "../Pages/PageContact/Contact";
+
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +36,10 @@ export const router = createBrowserRouter([
             {
                 path: "/servicios",
                 element: <PageServices />,
+            },
+            {
+                path: "/contacto",
+                element: <PageContact />,
             },
             {
                 path: "/login",
